@@ -31,15 +31,24 @@ foreach($terms as $key => $value) {
 </table><?php
 }
 
+if (isset($_POST['get-terms-name'])) {
+  $termvalue = $_POST['get-terms-name'];
+}
+
 ?>
 <div class="wrap">
 
   <h2>Demo Plugin Terms</h2>
 	
     <h3><a href="http://codex.wordpress.org/Function_Reference/get_terms">get_terms</a></h3>
-      <div>
-        <?php wiaw_layout_terms(get_terms('case-studies')); var_dump(get_terms('case-studies')); ?>
-      </div>
+      
+      <form method="post" action="options-general.php?page=demo-plugin-terms/demo-plugin-terms.php" name="terms-input" id="terms-input">
+        <input id='get-terms-input' name='get-terms-name' size='20' type='text' value='<?php echo $termvalue; ?>' />
+        <input type="submit" class="button-primary" value="Save Changes"/>
+        <div>
+          <?php wiaw_layout_terms(get_terms($termvalue)); var_dump(get_terms($termvalue)); ?>
+        </div>
+      </form>
 
 
     <h3><a href="http://codex.wordpress.org/Function_Reference/get_objects_in_term">get_object_in_term</a></h3>
