@@ -13,16 +13,18 @@
  */
 ?>
 	<h2>Demo Plugin Terms</h2>
-
+	
+<h3>get_term</h3>
 <div>
 <?php
-var_dump(get_term());
+var_dump(get_term('category'));
 ?>
 </div>
 
+<h3>get_object_in_term</h3>
 <div>
 <?php
-  var_dump(get_objects_in_term());
+  //var_dump(get_objects_in_term());
 ?>
 </div>
 </div>
