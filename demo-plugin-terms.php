@@ -31,7 +31,7 @@ if (!class_exists("demo_plugin_terms")) {
         	 * Move all the html to it's own
         	 * file, makes everything much cleaner.
         	 */
-            include('paths.html');	
+            include('terms.php');	
 		}
         
     }
