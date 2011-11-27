@@ -1,6 +1,6 @@
 <?php
 /*
- Plugin Name: Demo Plugin Paths
+ Plugin Name: Demo Plugin Terms
  Plugin URI: http://website-in-a-weekend.net/demo-plugins/demo-plugin-paths/
  Description: Utility plugin for keeping track of paths and constants in WordPress plugin development.
  Version: 0.1
@@ -14,16 +14,16 @@
 
 
 
-if (!class_exists("demo_plugin_paths")) {
+if (!class_exists("demo_plugin_terms")) {
 	
-    class demo_plugin_paths {
+    class demo_plugin_terms {
 
-        function demo_plugin_paths() {
+        function demo_plugin_terms() {
             add_action('admin_menu', array(&$this, 'on_admin_menu'));
         }
 
         function on_admin_menu() {
-            add_options_page('Demo Paths Page', 'Demo Paths', 'administrator', __FILE__ , array (&$this, 'paths_options'));
+            add_options_page('Demo Terms Page', 'Demo Terms', 'administrator', __FILE__ , array (&$this, 'paths_options'));
         }
 
         function paths_options() {
@@ -39,6 +39,6 @@ if (!class_exists("demo_plugin_paths")) {
 }
 					
 					
-$wpdpd = new demo_plugin_paths();
+$wpdpd = new demo_plugin_terms();
 
 ?>
