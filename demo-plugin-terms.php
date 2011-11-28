@@ -23,7 +23,9 @@ if (!class_exists("demo_plugin_terms")) {
         }
 
         function on_admin_menu() {
-            add_options_page('Demo Terms Page', 'Demo Terms', 'administrator', __FILE__ , array (&$this, 'paths_options'));
+            $pagehook = add_options_page('Demo Terms Page', 'Demo Terms', 'administrator', __FILE__ , array (&$this, 'paths_options'));
+            // We'd like to handle the form with the page hook.
+            //echo $pagehook;
         }
 
         function paths_options() {

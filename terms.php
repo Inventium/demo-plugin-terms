@@ -12,13 +12,15 @@
 
 function wiaw_layout_terms($terms) {
 ?>
-<table>
-  <tr>
-    <th>ID</th>
-    <th>Slug</th>
-    <th>Name</th>
-    <th>Description</th>
-  </tr>
+<table class="wp-list-table wide-fat fixed-pages">
+  <thead>
+    <tr>
+      <th scope="col" id="term-id"          class="manage-column column-title sortable desc ui-sortable" style="">ID</th>
+      <th scope="col" id="term-slug"        class="manage-column column-title sortable desc ui-sortable" style="">Slug</th>
+      <th scope="col" id="term-name"        class="manage-column column-title sortable desc ui-sortable" style="">Name</th>
+      <th scope="col" id="term-description" class="manage-column column-title sortable desc ui-sortable" style="">Description</th>
+    </tr>
+  </thead>
 <?php
 foreach($terms as $key => $value) {
   echo '<tr>';
@@ -33,7 +35,10 @@ foreach($terms as $key => $value) {
 
 if (isset($_POST['get-terms-name'])) {
   $termvalue = $_POST['get-terms-name'];
+} else {
+  $termvalue = 'enter term name here';
 }
+
 
 ?>
 <div class="wrap">
@@ -44,7 +49,7 @@ if (isset($_POST['get-terms-name'])) {
       
       <form method="post" action="options-general.php?page=demo-plugin-terms/demo-plugin-terms.php" name="terms-input" id="terms-input">
         <input id='get-terms-input' name='get-terms-name' size='20' type='text' value='<?php echo $termvalue; ?>' />
-        <input type="submit" class="button-primary" value="Save Changes"/>
+        <input type="submit" class="button-primary" value="Get the terms"/>
         <div>
           <?php wiaw_layout_terms(get_terms($termvalue)); var_dump(get_terms($termvalue)); ?>
         </div>
