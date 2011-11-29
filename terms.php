@@ -62,7 +62,13 @@ if (isset($_POST['get-terms-name'])) {
       </div>
 
     <h3><a href="http://codex.wordpress.org/Function_Reference/wp_get_object_terms">wp_get_object_by_terms</a></h3>
+
+get_admin_page_title():
+
 <?php
+
+var_dump(get_admin_page_title());
+
 if (0) {
 $product_terms = wp_get_object_terms($post->ID, 'product');
 if(!empty($product_terms)){
@@ -77,3 +83,13 @@ if(!empty($product_terms)){
 }
 ?>
 </div>
+<?php
+
+/*
+ * Find out which admin screen you are on:
+ * get_admin_page_title()
+ * Also, check global $current_screen and global $typenow
+ * This comes from the wp-hackers list, 11/29/2011
+ * 
+ * Also, JSON API plugin is available now.
+ */
